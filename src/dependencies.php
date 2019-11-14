@@ -19,5 +19,10 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
-
+    $container['ToDoModel'] = new LukeNamespace\Factories\ToDoModelFactory();
+    $container['AddToDoController'] = new LukeNamespace\Factories\AddToDoControllerFactory();
+    $container['GetAllToDosController'] = new LukeNamespace\Factories\GetAllToDosControllerFactory();
+    $container['SetToDoCompleteController'] = new LukeNamespace\Factories\SetToDoCompleteControllerFactory();
+    $container['UpdateToDoByIdController'] = new LukeNamespace\Factories\UpdateToDoByIdControllerFactory();
+    $container['DeleteToDoByIdController'] = new LukeNamespace\Factories\DeleteToDoByIdControllerFactory();
 };
