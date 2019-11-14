@@ -14,5 +14,9 @@ return function (App $app) {
         // Render index view
         return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
-
+    $app->get('/','GetAllToDosController');
+    $app->get('/add','AddToDoController');
+    $app->get('/complete','SetToDoCompleteController');
+    $app->get('/update','UpdateToDoByIdController');
+    $app->get('/delete','DeleteToDoByIdController');
 };
