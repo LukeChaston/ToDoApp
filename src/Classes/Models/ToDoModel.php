@@ -13,7 +13,11 @@ class ToDoModel
 
     public function addToDo()
     {
-
+        $db = new \PDO("mysql:host=127.0.0.1;dbname=ToDoList", 'root', 'password');
+        $query = $db->prepare("SELECT `id`,`Task` FROM `ToDo`");
+        $query->execute();
+        $results = $query->fetch();
+        return $results;
     }
 
     public function getAllToDos()
