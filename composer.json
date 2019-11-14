@@ -27,9 +27,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Example\\": "src/classes/"
+            "LukeNamespace\\": "src/Classes/"
         }
     },
+
     "config": {
         "process-timeout": 0,
         "sort-packages": true
