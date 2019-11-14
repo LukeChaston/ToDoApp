@@ -19,9 +19,5 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
-    $app->get('/','GetAllToDosController');
-    $app->get('/add','AddToDoController');
-    $app->get('/complete','SetToDoCompleteController');
-    $app->get('/update','UpdateToDoByIdController');
-    $app->get('/delete','DeleteToDoByIdController');
+
 };
