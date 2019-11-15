@@ -6,12 +6,12 @@ class ToDoModel
 {
     private $db;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->db=$db;
+        $this->db = $db;
     }
 
-    public function addToDo()
+    public function getAllToDo()
     {
         $db = new \PDO("mysql:host=127.0.0.1;dbname=ToDoList", 'root', 'password');
         $query = $db->prepare("SELECT `id`,`Task` FROM `ToDo`");
@@ -20,8 +20,9 @@ class ToDoModel
         $results = $query->fetch();
         return $results;
     }
+}
 
-    public function getAllToDos()
+  /*  public function addToDos()
     {
 
     }
@@ -38,3 +39,4 @@ class ToDoModel
 
     }
 }
+  */
