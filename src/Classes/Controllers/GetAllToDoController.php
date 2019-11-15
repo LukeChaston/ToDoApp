@@ -1,20 +1,21 @@
 <?php
 namespace LukeNamespace\Controllers;
 
+
 class GetAllToDoController
 {
-    private $Renderer;
-    private $TaskToDo;
+    private $renderer;
+    private $ToDoModel;
 
-    public function __construct($Renderer, $TaskToDo)
+    public function __construct($renderer, $ToDoModel)
     {
-        $this->Renderer = $Renderer;
-        $this->TaskToDo = $TaskToDo;
+        $this->renderer = $renderer;
+        $this->ToDoModel= $ToDoModel;
     }
 
     public function __invoke($request, $response, $args)
     {
-        $args['task'] = $this->TaskToDo->getTaskById($args['id']);
-        return $response->withJson($args['task'], 200);
+        $args['task'] = $this->ToDoModel->getAllToDo();
+        return $response->withJson($args['task']);
     }
 }
