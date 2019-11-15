@@ -17,7 +17,7 @@ class ToDoModel
         $query = $db->prepare("SELECT `id`,`Task` FROM `ToDo`");
         $query->bindParam(':id', $id);
         $query->execute();
-        $results = $query->fetch();
+        $results = $query->fetchAll();
         return $results;
     }
 }
