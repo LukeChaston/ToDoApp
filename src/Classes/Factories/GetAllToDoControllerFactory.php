@@ -7,8 +7,8 @@ class GetAllToDoControllerFactory
 {
     public function __invoke(ContainerInterface $container) : GetAllToDoController
     {
-        $TaskToDo = $container->get('ToDoModel');
-        $renderer = $container->get('Renderer');
-        return new GetAllToDoController($TaskToDo, $renderer);
+        $ToDoModel = $container->get('ToDoModel');
+        $renderer = $container->get('renderer');
+        return new GetAllToDoController($renderer, $ToDoModel);
     }
 }
